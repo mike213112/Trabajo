@@ -13,6 +13,7 @@ import { FinalComponent } from './componentes/final/final.component';
 
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
   providers: [],

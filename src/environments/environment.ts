@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-  apiKey: "AIzaSyBor-nPuTW2NIIDGs1iWpqfdmNuAxuNVCA",
+  firebaseConfig: {
+    apiKey: "AIzaSyBor-nPuTW2NIIDGs1iWpqfdmNuAxuNVCA",
     authDomain: "empresa-crud.firebaseapp.com",
     databaseURL: "https://empresa-crud.firebaseio.com",
     projectId: "empresa-crud",
@@ -12,6 +13,7 @@ export const environment = {
     messagingSenderId: "42159826873",
     appId: "1:42159826873:web:a7f35c30675def4baa7868",
     measurementId: "G-F4P8RJZ243"
+  }
 };
 
 /*
