@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/ingresar']" routerLinkActive="router-link-active">Ingreso de Materia Prima <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/ingresar']" routerLinkActive="active">Ingreso de Materia Prima </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/mostrar']" routerLinkActive="router-link-active"> Producto intermedio <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" [routerLink]="['/mostrar']" routerLinkActive="active"> Producto intermedio </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/final']" routerLinkActive="router-link-active"> Final <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/final']" routerLinkActive="active"> Final </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/inventario']" routerLinkActive="router-link-active"> Inventario<span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/inventario']" routerLinkActive="active"> Inventario</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/recibo']" routerLinkActive="router-link-active">  Despacho<span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/recibo']" routerLinkActive="active">  Despacho</a>
             </li>
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
@@ -43,11 +43,10 @@
         <div class="row">
             <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
                 <div class="card_login">
-                    <div class="card">
+                    <div class="card-header text-center">
+                        <h1>Ingreso de Materia Prima</h1>
                         <div class="card-body text-center">
                             <form id="f01" formGroup="formGroup">
-                                <h1>Ingreso de Materia Prima</h1>
-                                <br>
                                 <label>Proveedor: </label>
                                 <select name="miselect">
                                 <option value="Seleccionar"> Seleccionar</option>
@@ -55,18 +54,15 @@
                                 <option value="bobina1"> Bobina1 </option>
                                 <option value="bobina2"> Bobina2 </option>
                                 </select>
-                                <br> Peso:
+                                <br>
                                 <input type="text" formControlName="peso" placeholder="Peso">
                                 <br>
-                                <label>
-                                Codigo:
-                                </label>
                                 <input type="text" formControlName="codigo" placeholder="Codigo">
                                 <br>
-                                <label>
-                                Envio:                                </label>
                                 <input text="text" formControlName="envio" placeholder="Envio">
                             </form>
+                            <br>
+                            <button class="btn btn-sm btn-primary">Ingresar</button>
                         </div>
                     </div>
                 </div>

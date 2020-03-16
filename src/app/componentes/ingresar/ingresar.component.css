@@ -1,3 +1,4 @@
-body {
-  background-color: black;
+.card-header,
+card-body {
+  background-color: white;
 }
