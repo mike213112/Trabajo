@@ -11,6 +11,9 @@ import { InventarioComponent } from './componentes/inventario/inventario.compone
 import { ReciboComponent } from './componentes/recibo/recibo.component';
 import { FinalComponent } from './componentes/final/final.component';
 
+import { AngularFireModule } from 'angularfire2'
+import { AngularFireDatabaseModule } from 'angularfire2/database'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +27,9 @@ import { FinalComponent } from './componentes/final/final.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AngularFireModule.initializeApp(),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]
