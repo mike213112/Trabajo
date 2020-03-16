@@ -1,0 +1,73 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="/principal">Principal</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/ingresar">Ingreso de Materia Prima <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/ver"> Producto intermedio <span class="sr-only">(current)</span> </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/final"> Final <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/inventario"> Inventario<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/despacho"> Despacho<span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+        <!--<form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>-->
+    </div>
+</nav>
+<br>
+<br>
+<br>
+<br>
+<section id="login" class="mb-5 mt-5">
+    <div class="container">
+        <!--<img src="../../../assets/imagenes/fondo.jpg" class="img-fluid" style="position: absolute; top: auto; z-index: -100;">
+        -->
+        <img src="../../../assets/imagenes/fondo.jpg" class="img-fluid" alt="Responsive image">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_login">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <form id="f01" formGroup="formGroup">
+                                <h1>Ingreso de Materia Prima</h1>
+                                <br>
+                                <label>Proveedor: </label>
+                                <select name="miselect">
+                                <option value="Seleccionar"> Seleccionar</option>
+                                <option value="termium"> Termium </option>
+                                <option value="bobina1"> Bobina1 </option>
+                                <option value="bobina2"> Bobina2 </option>
+                                </select>
+                                <br> Peso:
+                                <input type="text" formControlName="peso" placeholder="Peso">
+                                <br>
+                                <label>
+                                Codigo:
+                                </label>
+                                <input type="text" formControlName="codigo" placeholder="Codigo">
+                                <br>
+                                <label>
+                                Envio:                                </label>
+                                <input text="text" formControlName="envio" placeholder="Envio">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
