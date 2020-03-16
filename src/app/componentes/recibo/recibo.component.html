@@ -6,25 +6,27 @@
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/ingresar">Ingreso de Materia Prima <span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/ingresar']" routerLinkActive="router-link-active">Ingreso de Materia Prima <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/ver"> Producto intermedio <span class="sr-only">(current)</span> </a>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/mostrar']" routerLinkActive="router-link-active"> Producto intermedio <span class="sr-only">(current)</span> </a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/final"> Final <span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/final']" routerLinkActive="router-link-active"> Final <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/inventario"> Inventario<span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/inventario']" routerLinkActive="router-link-active"> Inventario<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/despacho"> Despacho<span class="sr-only">(current)</span></a>
+            <li class="nav-item ">
+                <a class="nav-link" [routerLink]="['/recibo']" routerLinkActive="router-link-active">  Despacho<span class="sr-only">(current)</span></a>
             </li>
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>-->
+        <a class="navbar-brand hidden-md-down"></a>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+            </li>
+        </ul>
     </div>
 </nav>

@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { LoginComponent } from "./componentes/login/logincomponent";
-import { PrincipalComponent } from "./componentes/principal/principalncomponent";
-import { IngresarComponent } from "./componentes/ingresar/ingresarcomponent";
-import { InventarioComponent } from "./componentes/inventario/inventariocomponent";
-import { MostrarComponent } from "./componentes/mostrar/mostrarcomponent";
-import { ReciboComponent } from "./componentes/recibo/recibocomponent";
+import { LoginComponent } from "./componentes/login/login.component";
+import { PrincipalComponent } from "./componentes/principal/principal.component";
+import { IngresarComponent } from "./componentes/ingresar/ingresar.component";
+import { InventarioComponent } from "./componentes/inventario/inventario.component";
+import { MostrarComponent } from "./componentes/mostrar/mostrar.component";
+import { ReciboComponent } from "./componentes/recibo/recibo.component";
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
@@ -14,6 +14,7 @@ const routes: Routes = [
   {path: 'inventario', component: InventarioComponent},
   {path: 'mostrar', component: MostrarComponent},
   {path: 'recibo', component: ReciboComponent},
+  {path: 'final', component: ReciboComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 

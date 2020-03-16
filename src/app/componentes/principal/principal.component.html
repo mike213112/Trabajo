@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" href="/ingresar">Ingreso de Materia Prima <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/ingresar']" routerLinkActive="active">Ingreso de Materia Prima </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/ver"> Producto intermedio <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" [routerLink]="['/mostrar']" routerLinkActive="active"> Producto intermedio </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/final"> Final <span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/final']" routerLinkActive="active"> Final </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/inventario"> Inventario<span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/inventario']" routerLinkActive="active"> Inventario</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link"> Despacho<span class="sr-only">(current)</span></a>
+                <a class="nav-link" [routerLink]="['/recibo']" routerLinkActive="active">  Despacho</a>
             </li>
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
