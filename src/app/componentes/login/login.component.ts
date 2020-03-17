@@ -13,7 +13,7 @@ export class LoginComponent implements OnInit {
   }
 
   public Entrar(){
-    this.router.navigate(['/principal']);
+    this.router.navigate(['/user/principal']);
   }
   
 }

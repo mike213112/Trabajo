@@ -6,15 +6,16 @@ import { IngresarComponent } from "./componentes/ingresar/ingresar.component";
 import { InventarioComponent } from "./componentes/inventario/inventario.component";
 import { MostrarComponent } from "./componentes/mostrar/mostrar.component";
 import { ReciboComponent } from "./componentes/recibo/recibo.component";
+import { FinalComponent } from './componentes/final/final.component';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'principal', component: PrincipalComponent},
-  {path: 'ingresar', component: IngresarComponent},
-  {path: 'inventario', component: InventarioComponent},
-  {path: 'mostrar', component: MostrarComponent},
-  {path: 'recibo', component: ReciboComponent},
-  {path: 'final', component: ReciboComponent},
+  {path: 'user/principal', component: PrincipalComponent},
+  {path: 'user/insert', component: IngresarComponent},
+  {path: 'user/intermediate', component: MostrarComponent},
+  {path: 'user/final', component: FinalComponent},
+  {path: 'user/inventory', component: InventarioComponent},
+  {path: 'user/receipt', component: ReciboComponent},
   {path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 

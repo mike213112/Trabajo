@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/principal">Principal</a>
+    <a class="navbar-brand" href="/user/principal">Principal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/ingresar']" routerLinkActive="active">Ingreso de Materia Prima </a>
+                <a class="nav-link" [routerLink]="['/user/insert']" routerLinkActive="active">Ingreso de Materia Prima </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/mostrar']" routerLinkActive="active"> Producto intermedio </a>
+                <a class="nav-link" [routerLink]="['/user/intermediate']" routerLinkActive="active"> Producto intermedio </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/final']" routerLinkActive="active"> Final </a>
+                <a class="nav-link" [routerLink]="['/user/final']" routerLinkActive="active"> Final </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/inventario']" routerLinkActive="active"> Inventario</a>
+                <a class="nav-link" [routerLink]="['/user/inventory']" routerLinkActive="active"> Inventario</a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/recibo']" routerLinkActive="active">  Despacho</a>
+                <a class="nav-link" [routerLink]="['/user/receipt']" routerLinkActive="active">  Despacho</a>
             </li>
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
@@ -31,30 +31,31 @@
     </div>
 </nav>
 <br>
-<div class="container">
-    <div class="card ">
-        <div class="card-header">
-            <h1>Inventario</h1>
-        </div>
-        <div class="card-body">
-            <table class="table table-hover table-dark">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Peso</th>
-                        <th>Codigo</th>
-                        <th>Envio</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let quemar of agregarArray" class="text-center">
-                        <td>{{quemar.id}}</td>
-                        <td>{{quemar.peso}}</td>
-                        <td>{{quemar.codigo}}</td>
-                        <td>{{quemar.envio}}</td>
-                    </tr>
-                </tbody>
-            </table>
+<br>
+<br>
+<br>
+<br>
+<section id="intermediate" class="mb-5 mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-md-4 mx-auto">
+                <div class="card_login">
+                    <div class="card-header text-center">
+                        <h1>Intermedio</h1>
+                        <div class="card-body text-center">
+                            <form id="f01" formGroup="formGroup">
+                                <input type="text" formControlName="tiras" placeholder="tiras">
+                                <br>
+                                <input type="text" formControlName="codigo" placeholder="codigo">
+                                <br>
+                                <input text="text" formControlName="producto" placeholder="Producto">
+                            </form>
+                            <br>
+                            <button class="btn btn-block btn-primary">Insertar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+</section>
