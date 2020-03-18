@@ -31,9 +31,6 @@
     </div>
 </nav>
 <br>
-<br>    
-<br>
-<br>
 <section id="insert" class="mb-5 mt-5">
     <div class="container">
         <div class="row">
@@ -44,13 +41,12 @@
                         <div class="card-body text-center">
                             <form #productForm="ngForm">
                                 <div class="form-group">
-                                <label>Proveedor: </label>
                                 <select class="form-control" >
                                 <option class="form-control"
                                 name="cliente" 
                                 #cliente="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="Seleccionar"> Seleccionar</option>
+                                value="Seleccionar"> Seleccione el Proveedor</option>
                                 <option class="form-control"
                                 name="cliente" 
                                 #cliente="ngModel" 

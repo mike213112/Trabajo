@@ -7,3 +7,9 @@ card-header {
 h1 {
   color: white;
 }
+.card-body,
+form-control,
+fecha {
+  color: white;
+  text-size-adjust: 10;
+}

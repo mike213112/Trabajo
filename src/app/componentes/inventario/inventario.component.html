@@ -41,14 +41,18 @@
             <table class="table table-hover table-dark">
                 <thead>
                     <tr>
-                        <th>Id</th>
-                        <th>Peso</th>
                         <th>Codigo</th>
-                        <th>Envio</th>
+                        <th>Pedido</th>
+                        <th>Peso KG</th>
+                        <th>Cantidad</th>
+                        <th>Largo MTS</th>
+                        <th>Total METROS</th>
+                        <th>Rendimiento</th>
+                        <th>Observaciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let quemar of agregarArray" class="text-center">
+                    <tr *ngFor="let quemar of agregarArray">
                         <td>{{quemar.id}}</td>
                         <td>{{quemar.peso}}</td>
                         <td>{{quemar.codigo}}</td>
