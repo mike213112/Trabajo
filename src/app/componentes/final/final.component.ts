@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BaseService } from '../../services/base.service';
 
 @Component({
   selector: 'empresa-final',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FinalComponent implements OnInit {
 
-  constructor() { }
+  constructor(public baseService: BaseService) { }
 
   ngOnInit(): void {
   }

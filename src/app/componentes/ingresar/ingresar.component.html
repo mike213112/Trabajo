@@ -31,7 +31,7 @@
     </div>
 </nav>
 <br>
-<br>
+<br>    
 <br>
 <br>
 <section id="insert" class="mb-5 mt-5">
@@ -45,51 +45,50 @@
                             <form #productForm="ngForm">
                                 <div class="form-group">
                                 <label>Proveedor: </label>
-                                <select class="form-control" name="miselect">
-                                <option  
-                                name="proveedor" 
-                                #proveedor="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                <select class="form-control" >
+                                <option class="form-control"
+                                name="cliente" 
+                                #cliente="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.cliente" 
                                 value="Seleccionar"> Seleccionar</option>
-                                <option 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                <option class="form-control"
+                                name="cliente" 
+                                #cliente="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.cliente" 
                                 value="termium"> Termium </option>
-                                <option 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                <option class="form-control"
+                                name="cliente" 
+                                #cliente="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.cliente" 
                                 value="bobina1"> Bobina1 </option>
-                                <option 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                <option class="form-control"
+                                name="cliente" 
+                                #cliente="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.cliente" 
                                 value="bobina2"> Bobina2 </option>
                                 </select>
                                 <br>
                                 <input type="text" class="form-control" 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
+                                name="peso" 
+                                #peso="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.peso" 
                                 placeholder="Peso">
                                 <br>
                                 <input type="text" class="form-control" 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
+                                name="codigo" 
+                                #codigo="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.codigo" 
                                 placeholder="Codigo">
                                 <br>
                                 <input text="text" class="form-control" 
-                                name="proveedor" 
-                                #proveedor="ngModel" 
+                                name="envio" 
+                                #envio="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.envio" 
                                 placeholder="Envio">
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-primary" type="submit" >
-                                        <i class="fas fa-plus-circle"></i>
-                                        Insertar
+                                    <button class="btn btn-block btn-primary" type="submit" >
+                                        Ingresar
                                     </button>
                                 </div>
                             </form>

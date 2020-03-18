@@ -3,7 +3,7 @@ export class Connec {
     user: string;
     pass: string;
     trabajador: string;
-    proveedor: string;
+    cliente: string;
     peso: number;
     codigo: string;
     envio: string;

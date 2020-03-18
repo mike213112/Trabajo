@@ -20,7 +20,7 @@ export class BaseService {
 
   insertarMateriaPrima(product: Connec){
     this.productList.push({
-      proveedor: product.proveedor,
+      cliente: product.cliente,
       peso: product.peso,
       codigo: product.codigo,
       envio: product.envio
@@ -29,7 +29,7 @@ export class BaseService {
 
   UpdateProduct(product: Connec){
     this.productList.update(product.$key,{
-      proveedor: product.proveedor,
+      cliente: product.cliente,
       peso: product.peso,
       codigo: product.codigo,
       envio: product.envio

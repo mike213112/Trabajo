@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Quemar } from '../../api/quemar';
 import { BaseService } from '../../services/base.service';
 
 @Component({
@@ -8,11 +7,6 @@ import { BaseService } from '../../services/base.service';
   styleUrls: ['./ingresar.component.scss']
 })
 export class IngresarComponent implements OnInit {
-
-  agregarArray: Quemar[] = [
-    { id: 1, peso: 190, codigo: 'hola12', envio: "San Jose Acatempa" },
-    { id: 2, peso: 190, codigo: 'hola12123', envio: "San Jose Pinula" }
-  ]
 
   constructor(public baseService: BaseService) { }
 
