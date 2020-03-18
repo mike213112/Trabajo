@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule,FormGroup, FormControlName } from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,8 @@ import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { environment } from 'src/environments/environment';
 
+import { BaseService } from './services/base.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,10 +32,13 @@ import { environment } from 'src/environments/environment';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig),
-    AngularFireDatabaseModule
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule, 
+    FormsModule
   ],
-  providers: [],
+  providers: [
+    BaseService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

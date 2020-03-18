@@ -42,23 +42,57 @@
                     <div class="card-header text-center">
                         <h1>Ingreso de Materia Prima</h1>
                         <div class="card-body text-center">
-                            <form id="f01" formGroup="formGroup">
+                            <form #productForm="ngForm">
+                                <div class="form-group">
                                 <label>Proveedor: </label>
-                                <select name="miselect">
-                                <option value="Seleccionar"> Seleccionar</option>
-                                <option value="termium"> Termium </option>
-                                <option value="bobina1"> Bobina1 </option>
-                                <option value="bobina2"> Bobina2 </option>
+                                <select class="form-control" name="miselect">
+                                <option  
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                value="Seleccionar"> Seleccionar</option>
+                                <option 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                value="termium"> Termium </option>
+                                <option 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                value="bobina1"> Bobina1 </option>
+                                <option 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.proveedor" 
+                                value="bobina2"> Bobina2 </option>
                                 </select>
                                 <br>
-                                <input type="text" formControlName="peso" placeholder="Peso">
+                                <input type="text" class="form-control" 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.peso" 
+                                placeholder="Peso">
                                 <br>
-                                <input type="text" formControlName="codigo" placeholder="Codigo">
+                                <input type="text" class="form-control" 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.codigo" 
+                                placeholder="Codigo">
                                 <br>
-                                <input text="text" formControlName="envio" placeholder="Envio">
+                                <input text="text" class="form-control" 
+                                name="proveedor" 
+                                #proveedor="ngModel" 
+                                [(ngModel)]="baseService.selectedProduct.envio" 
+                                placeholder="Envio">
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-primary" type="submit" >
+                                        <i class="fas fa-plus-circle"></i>
+                                        Insertar
+                                    </button>
+                                </div>
                             </form>
-                            <br>
-                            <button class="btn btn-sm btn-primary">Insertar</button>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Quemar } from '../../api/quemar';
+import { BaseService } from '../../services/base.service';
+
 @Component({
   selector: 'empresa-ingresar',
   templateUrl: './ingresar.component.html',
@@ -12,7 +14,7 @@ export class IngresarComponent implements OnInit {
     { id: 2, peso: 190, codigo: 'hola12123', envio: "San Jose Pinula" }
   ]
 
-  constructor() { }
+  constructor(public baseService: BaseService) { }
 
   ngOnInit(): void {
   }
