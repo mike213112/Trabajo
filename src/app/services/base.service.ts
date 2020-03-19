@@ -1,18 +1,22 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 import { Connec } from '../models/connec';
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseService {
 
+  login: any = false;
+
   productList: AngularFireList<any>;
   selectedProduct: Connec = new Connec();
 
-  constructor(private firebase: AngularFireDatabase) { 
+  constructor(private firebase: AngularFireDatabase) {
 
   }
+
 
   getProduct(){
     return this.productList = this.firebase.list('products');

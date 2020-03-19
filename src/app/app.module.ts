@@ -11,12 +11,11 @@ import { MostrarComponent } from './componentes/mostrar/mostrar.component';
 import { InventarioComponent } from './componentes/inventario/inventario.component';
 import { ReciboComponent } from './componentes/recibo/recibo.component';
 import { FinalComponent } from './componentes/final/final.component';
-
 import { AngularFireModule } from 'angularfire2'
 import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { environment } from 'src/environments/environment';
-
 import { BaseService } from './services/base.service'
+import { AngularFireAuth } from '@angular/fire/auth';
 
 @NgModule({
   declarations: [
@@ -33,11 +32,12 @@ import { BaseService } from './services/base.service'
     BrowserModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule, 
+    AngularFireDatabaseModule,
     FormsModule
   ],
   providers: [
-    BaseService
+    BaseService,
+    AngularFireAuth
   ],
   bootstrap: [AppComponent]
 })

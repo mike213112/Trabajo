@@ -1,7 +1,5 @@
 export class Connec {
     $key: string;
-    user: string;
-    pass: string;
     operador: string;
     linea: string;
     horario: string;
