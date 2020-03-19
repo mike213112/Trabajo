@@ -3,6 +3,9 @@ import { Quemar } from 'src/app/api/quemar';
 import { BaseService } from '../../services/base.service';
 import { Connec } from '../../models/connec';
 import { element } from 'protractor';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'empresa-inventario',
@@ -18,7 +21,10 @@ export class InventarioComponent implements OnInit {
 
   listarMateriales: Connec[];
 
-  constructor(private baseService: BaseService) { }
+  constructor(private baseService: BaseService,
+              private toastr: ToastrService,
+              private router: Router,
+              private authService: LoginService) { }
 
   ngOnInit() {
     this.baseService.getProduct()  
@@ -32,4 +38,16 @@ export class InventarioComponent implements OnInit {
       })
     })
   }
+  
+  onClickLogout() {
+    this.authService.logout();
+  }
+
+  Delect($key: string){
+    if(confirm('Estas seguro de querer eliminar este producto del inventario?')){
+      this.baseService.DeleteProduct($key);
+    this.toastr.success("El producto ha sido eliminado con exito","Operacion Exitosa")
+    }
+  }
+
 }

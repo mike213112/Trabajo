@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { BaseService } from '../../services/base.service';
 import { Connec } from '../../models/connec';
 import { NgForm } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'empresa-final',
@@ -12,7 +15,10 @@ export class FinalComponent implements OnInit {
 
   ListarProduct: Connec[];
 
-  constructor(public baseService: BaseService) { }
+  constructor(public baseService: BaseService,
+              private toastr: ToastrService,
+              private router: Router,
+              private authService: LoginService) { }
 
   ngOnInit(){
     this.baseService.getProduct();
@@ -29,8 +35,13 @@ export class FinalComponent implements OnInit {
     })
   }
 
+  onClickLogout() {
+    this.authService.logout();
+  }
+
   onSubmit(productForm: NgForm){
     this.baseService.ingresarProductoFinal(productForm.value);
+    this.toastr.success('Se agrego un nuevo producto','Operacion Exitosa')
     this.resetForm(productForm);
   }
 

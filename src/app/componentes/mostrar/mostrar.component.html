@@ -18,14 +18,14 @@
             <li class="nav-item ">
                 <a class="nav-link" [routerLink]="['/user/inventory']" routerLinkActive="active"> Inventario</a>
             </li>
-            <li class="nav-item ">
+            <!--<li class="nav-item ">
                 <a class="nav-link" [routerLink]="['/user/receipt']" routerLinkActive="active">  Despacho</a>
-            </li>
+            </li>-->
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
         <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-                <a class="btn-floating btn-lg btn-fb" type="button" role="button"><i class="fab fa-facebook-f"></i></a>
+                <a class="btn-floating btn-lg " type="button" role="button" (click)="onClickLogout()">Salir</a>
             </li>
         </ul>
     </div>

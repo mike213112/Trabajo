@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'empresa-principal',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrincipalComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router,
+              private authService: LoginService) { }
 
   ngOnInit(): void {
+  }
+
+  onClickLogout() {
+    this.authService.logout();
   }
 
 }

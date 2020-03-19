@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { User } from '../../models/user';
 
 import { LoginService } from '../../services/login.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'empresa-login',
@@ -15,22 +16,19 @@ export class LoginComponent implements OnInit {
   public password: string;
 
   constructor(private router: Router,
-              private autenticar: LoginService) { }
+              private autenticar: LoginService,
+              private toastr: ToastrService) { }
 
   ngOnInit(): void {
-  }
- 
-  public Entrar(){
-    this.router.navigate(['/user/principal']);
   }
 
   onSubmitLogin() {
     this.autenticar.loginEmail(this.email, this.password)
     .then( (res) => {
-      
-      this.router.navigate(['/privado']);
+      this.toastr.success('Bienvenido','Operacion Exitosa');
+      this.router.navigate(['/user/principal']);
     }).catch((err) => {
-      
+      this.toastr.error('Sus credenciales no son correctas','Operacion Incorrecta');
       this.router.navigate(['/login']);
     });
   }

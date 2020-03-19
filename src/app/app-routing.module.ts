@@ -7,15 +7,16 @@ import { InventarioComponent } from "./componentes/inventario/inventario.compone
 import { MostrarComponent } from "./componentes/mostrar/mostrar.component";
 import { ReciboComponent } from "./componentes/recibo/recibo.component";
 import { FinalComponent } from './componentes/final/final.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'user/principal', component: PrincipalComponent},
-  {path: 'user/insert', component: IngresarComponent},
-  {path: 'user/intermediate', component: MostrarComponent},
-  {path: 'user/final', component: FinalComponent},
-  {path: 'user/inventory', component: InventarioComponent},
-  {path: 'user/receipt', component: ReciboComponent},
+  {path: 'user/principal', component: PrincipalComponent, canActivate: [AuthGuard]},
+  {path: 'user/insert', component: IngresarComponent, canActivate: [AuthGuard]},
+  {path: 'user/intermediate', component: MostrarComponent, canActivate: [AuthGuard]},
+  {path: 'user/final', component: FinalComponent, canActivate: [AuthGuard]},
+  {path: 'user/inventory', component: InventarioComponent, canActivate: [AuthGuard]},
+  {path: 'user/receipt', component: ReciboComponent, canActivate: [AuthGuard]},
   {path: '**', pathMatch: 'full', redirectTo: 'login'}
 ];
 
