@@ -27,6 +27,25 @@ export class BaseService {
     });
   }
 
+  ingresarProductoIntermedio(product: Connec){
+    this.productList.push({
+      fecha: product.fecha,
+      codigo1: product.codigo1,
+      peso: product.peso
+    })
+  }
+
+  ingresarProductoFinal(product: Connec){
+    this.productList.push({
+      operador: product.operador,
+      linea: product.linea,
+      fecha: product.fecha,
+      horario: product.horario,
+      perfiles: product.perfiles,
+      medidas: product.medidas
+    })
+  }
+
   UpdateProduct(product: Connec){
     this.productList.update(product.$key,{
       cliente: product.cliente,

@@ -39,29 +39,29 @@
                     <div class="card-header text-center">
                         <h1>Ingreso de Materia Prima</h1>
                         <div class="card-body text-center">
-                            <form #productForm="ngForm">
+                            <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
                                 <div class="form-group">
-                                <select class="form-control" >
-                                <option class="form-control"
+                                <!--<input type="text" class="form-control" 
                                 name="cliente" 
-                                #cliente="ngModel" 
+                                #clientee="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="Seleccionar"> Seleccione el Proveedor</option>
-                                <option class="form-control"
-                                name="cliente" 
-                                #cliente="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="termium"> Termium </option>
-                                <option class="form-control"
-                                name="cliente" 
-                                #cliente="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="bobina1"> Bobina1 </option>
-                                <option class="form-control"
-                                name="cliente" 
-                                #cliente="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="bobina2"> Bobina2 </option>
+                                placeholder="Proveedor">-->
+                                <select class="form-control"
+                                    name="cliente" 
+                                    #cliente="ngModel" 
+                                    [(ngModel)]="baseService.selectedProduct.cliente">
+                                    <option class="form-control" value="Seleccionar"> 
+                                        Seleccione el Proveedor
+                                    </option>
+                                    <option class="form-control" value="Termium"> 
+                                    Termium 
+                                    </option>
+                                    <option class="form-control" value="Bobina1"> 
+                                        Bobina1 
+                                    </option>
+                                    <option class="form-control" value="Bobina2"> 
+                                    Bobina2 
+                                    </option>
                                 </select>
                                 <br>
                                 <input type="text" class="form-control" 
@@ -85,6 +85,13 @@
                                 <div class="form-group">
                                     <button class="btn btn-block btn-primary" type="submit" >
                                         Ingresar
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-block btn-secondary active" 
+                                    type="reset" 
+                                    (click)="resetForm(myform)"> 
+                                        Nuevo
                                     </button>
                                 </div>
                             </form>

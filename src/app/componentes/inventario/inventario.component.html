@@ -35,7 +35,7 @@
 <div class="container">
     <div class="card ">
         <div class="card-header">
-            <h1>Inventario</h1>
+            <h1 class="color">Invetario</h1>
         </div>
         <div class="card-body">
             <table class="table table-hover table-dark">
@@ -45,18 +45,17 @@
                         <th>Pedido</th>
                         <th>Peso KG</th>
                         <th>Cantidad</th>
-                        <th>Largo MTS</th>
-                        <th>Total METROS</th>
+                        <th>Largo metros</th>
+                        <th>Total metros</th>
                         <th>Rendimiento</th>
                         <th>Observaciones</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let quemar of agregarArray">
-                        <td>{{quemar.id}}</td>
-                        <td>{{quemar.peso}}</td>
-                        <td>{{quemar.codigo}}</td>
-                        <td>{{quemar.envio}}</td>
+                    <tr *ngFor="let connec of listarMateriales">
+                        <td>{{connec.codigo}}</td>
+                        <td>{{connec.cliente}}</td>
+                        <td>{{connec.envio}}</td>
                     </tr>
                 </tbody>
             </table>

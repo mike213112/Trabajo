@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Quemar } from 'src/app/api/quemar';
+import { BaseService } from '../../services/base.service';
+import { Connec } from '../../models/connec';
+import { element } from 'protractor';
 
 @Component({
   selector: 'empresa-inventario',
@@ -13,9 +16,20 @@ export class InventarioComponent implements OnInit {
     { id: 2, peso: 190, codigo: 'hola12123', envio: "San Jose Pinula" }
   ]
 
-  constructor() { }
+  listarMateriales: Connec[];
 
-  ngOnInit(): void {
+  constructor(private baseService: BaseService) { }
+
+  ngOnInit() {
+    this.baseService.getProduct()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarMateriales = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarMateriales.push(x as Connec)
+      })
+    })
   }
-
 }

@@ -38,7 +38,7 @@
                     <div class="card-header text-center">
                         <h1>Final</h1>
                         <div class="card-body text-center">
-                            <form #productForm="ngForm">
+                            <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
                                 <div class="form-group">
                                 <input type="text" class="form-control" 
                                 name="operador" 
@@ -52,205 +52,116 @@
                                 [(ngModel)]="baseService.selectedProduct.linea" 
                                 placeholder="Linea">
                                 <br>
-                                <label class="fecha">Fecha</label>
-                                <select class="form-control" >
-                                <option class="form-control"
-                                name="cliente" 
-                                #cliente="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.cliente" 
-                                value="Seleccionar"> Seleccionar el turno</option>
-                                <option class="form-control"
+                                <br>
+                                <!--<select class="form-control"
+                                *ngFor="let product of ListarProduct">
+                                    <option>
+                                        {{product.codigo1}}
+                                    </option>
+                                </select>-->
+                                <label>Seleccion el Horario</label>
+                                <select class="form-control"
                                 name="horario" 
                                 #horario="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.horario" 
+                                [(ngModel)]="baseService.selectedProduct.horario" >
+                                <option class="form-control"
                                 value="am"> Am </option>
                                 <option class="form-control"
-                                name="horario" 
-                                #horario="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.horario" 
                                 value="pm"> Pm </option>
                                 </select> 
                                 <br>
-                                <select class="form-control" >
-                                    <option class="form-control"
+                                <label>Seleccione el Perfil</label>
+                                <select class="form-control"
                                     name="perfiles" 
                                     #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
-                                    value="Seleccionar"> Seleccionar el Perfil </option>
+                                    [(ngModel)]="baseService.selectedProduct.perfiles" >
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Angular x 8 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 1 5/8 x 10 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 1 5/8 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 2 1/2 x 10</option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 2 1/2 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 3 5/8 x 10 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canal 3 5/8x 10' cal 22 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Canaleta x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Omega x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 1 5/8 x 8 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 1 5/8 x 10 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 1 5/8 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 8 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 2.80 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 10 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 11 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 16 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 2 1/2 x 10 cal 22 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 3 5/8 x 8 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 3 5/8 x 8 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> Poste 3 5/8 x 10 cal 22 </option>
                                 </select>   
                                 <br>
-                                <label>Codigo</label>
-                                <select class="form-control" >
+                                <!--<select class="form-control"
+                                    *ngFor="let product of ListarProduct">
+                                <option>{{product.codigo1}}</option>
+                                </select>-->
+                                <label>Seleccion las medidas</label>
+                                <select class="form-control" 
+                                    name="medidas" 
+                                    #medidas="ngModel" 
+                                    [(ngModel)]="baseService.selectedProduct.medidas" >
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
-                                    value="Seleccionar"> Seleccionar las medidas </option>
-                                    <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 2.44 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 2.745 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 2.80 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 3.05 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 3.66 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 2.27 mts </option>
                                     <option class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" 
                                     value="Seleccionar"> 4.88 mts </option>
                                 </select>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-block btn-primary" type="submit" >
                                         Ingresar
+                                    </button>
+                                </div>
+                                <div class="form-group">
+                                    <button class="btn btn-block btn-secondary active" 
+                                    type="reset" 
+                                    (click)="resetForm(productForm)"> 
+                                        Nuevo
                                     </button>
                                 </div>
                             </form>

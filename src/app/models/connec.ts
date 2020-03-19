@@ -8,7 +8,9 @@ export class Connec {
     trabajador: string;
     cliente: string;
     peso: number;
+    medidas: string;
     codigo: string;
+    codigo1: string;
     envio: string;
     tiras: string;
     perfiles: string;
