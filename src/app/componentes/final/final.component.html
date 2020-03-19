@@ -51,15 +51,7 @@
                                 #linea="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.linea" 
                                 placeholder="Linea">
-                                <br>
-                                <br>
-                                <!--<select class="form-control"
-                                *ngFor="let product of ListarProduct">
-                                    <option>
-                                        {{product.codigo1}}
-                                    </option>
-                                </select>-->
-                                <label>Seleccion el Horario</label>
+                                <label class="borde">Seleccion el Horario</label>
                                 <select class="form-control"
                                 name="horario" 
                                 #horario="ngModel" 
@@ -69,7 +61,6 @@
                                 <option class="form-control"
                                 value="pm"> Pm </option>
                                 </select> 
-                                <br>
                                 <label>Seleccione el Perfil</label>
                                 <select class="form-control"
                                     name="perfiles" 
@@ -127,10 +118,20 @@
                                     value="Seleccionar"> Poste 3 5/8 x 10 cal 22 </option>
                                 </select>   
                                 <br>
-                                <!--<select class="form-control"
-                                    *ngFor="let product of ListarProduct">
-                                <option>{{product.codigo1}}</option>
-                                </select>-->
+                                <div class="form-group">
+                                    <label class="color">Fecha: </label>
+                                    <input 
+                                    name="fecha" 
+                                    #fecha="ngModel" 
+                                    [(ngModel)]="baseService.selectedProduct.fecha"
+                                    type="date" id="fecha">
+                                </div>
+                                <label>Seleccione el Codigo</label>
+                                <select class="form-control">
+                                    <option *ngFor="let product of ListarProduct">
+                                        {{product.codigo1}}
+                                    </option>
+                                </select>
                                 <label>Seleccion las medidas</label>
                                 <select class="form-control" 
                                     name="medidas" 

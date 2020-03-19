@@ -41,18 +41,11 @@
                         <div class="card-body text-center">
                             <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
                                 <div class="form-group">
-                                <!--<input type="text" class="form-control" 
-                                name="cliente" 
-                                #clientee="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.cliente" 
-                                placeholder="Proveedor">-->
+                                <label class="color">Seleccione el Proveedor</label>
                                 <select class="form-control"
                                     name="cliente" 
                                     #cliente="ngModel" 
                                     [(ngModel)]="baseService.selectedProduct.cliente">
-                                    <option class="form-control" value="Seleccionar"> 
-                                        Seleccione el Proveedor
-                                    </option>
                                     <option class="form-control" value="Termium"> 
                                     Termium 
                                     </option>

@@ -43,13 +43,12 @@
                         <div class="card-body text-center">
                             <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
                                 <div class="form-group">
-                                <h5>Fecha:
+                                <label class="color">Fecha: </label>
                                 <input 
                                 name="fecha" 
                                 #fecha="ngModel" 
                                 [(ngModel)]="baseService.selectedProduct.fecha"
                                 type="date" id="fecha">
-                                </h5>
                                 </div>
                                 <input type="text" class="form-control" 
                                 name="codigo1" 
