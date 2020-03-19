@@ -25,10 +25,10 @@ export class LoginComponent implements OnInit {
   onSubmitLogin() {
     this.autenticar.loginEmail(this.email, this.password)
     .then( (res) => {
-      this.toastr.success('Bienvenido','Operacion Exitosa');
+      this.toastr.success('Bienvenido');
       this.router.navigate(['/user/principal']);
     }).catch((err) => {
-      this.toastr.error('Sus credenciales no son correctas','Operacion Incorrecta');
+      this.toastr.error('Sus credenciales no son correctas');
       this.router.navigate(['/login']);
     });
   }

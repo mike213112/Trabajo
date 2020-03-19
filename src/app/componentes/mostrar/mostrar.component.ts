@@ -25,12 +25,14 @@ export class MostrarComponent implements OnInit {
 
   onSubmit(productForm: NgForm){
     this.baseService.ingresarProductoIntermedio(productForm.value);
-    this.toastr.success('Se agrego un nuevo producto','Operacion Exitosa')
+    this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(productForm);
   }
 
   onClickLogout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
+    this.toastr.success('Cierre de session con exito');
   }
 
   resetForm(productForm?: NgForm){

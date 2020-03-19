@@ -5,6 +5,7 @@ import { NgForm } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'empresa-final',
@@ -15,11 +16,17 @@ export class FinalComponent implements OnInit {
 
   ListarProduct: Connec[];
 
+
+
   constructor(public baseService: BaseService,
               private toastr: ToastrService,
               private router: Router,
-              private authService: LoginService) { }
+              private authService: LoginService,
+              private firebase: AngularFireDatabase) { }
 
+
+
+              
   ngOnInit(){
     this.baseService.getProduct();
     this.resetForm();
@@ -37,11 +44,14 @@ export class FinalComponent implements OnInit {
 
   onClickLogout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
+    this.toastr.success('Cierre de session con exito');
   }
 
   onSubmit(productForm: NgForm){
     this.baseService.ingresarProductoFinal(productForm.value);
-    this.toastr.success('Se agrego un nuevo producto','Operacion Exitosa')
+    
+    this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(productForm);
   }
 

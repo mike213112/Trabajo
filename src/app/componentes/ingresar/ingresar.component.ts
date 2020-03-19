@@ -25,12 +25,14 @@ export class IngresarComponent implements OnInit {
 
   onSubmit(myform: NgForm){
     this.baseService.insertarMateriaPrima(myform.value);
-    this.toastr.success('Se agrego un nuevo producto','Operacion Exitosa')
+    this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(myform);
   }
 
   onClickLogout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
+    this.toastr.success('Cierre de session con exito');
   }
 
   resetForm(myform?: NgForm){

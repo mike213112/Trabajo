@@ -1,3 +1,8 @@
 .btn-floating {
   color: white;
 }
+.carousel slide,
+.carousel-indicators,
+.color {
+  color: black;
+}

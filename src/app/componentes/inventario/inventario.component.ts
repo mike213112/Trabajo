@@ -6,6 +6,7 @@ import { element } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'empresa-inventario',
@@ -20,7 +21,7 @@ export class InventarioComponent implements OnInit {
   ]
 
   listarMateriales: Connec[];
-
+  productList: AngularFireList<any>;
   constructor(private baseService: BaseService,
               private toastr: ToastrService,
               private router: Router,
@@ -41,12 +42,14 @@ export class InventarioComponent implements OnInit {
   
   onClickLogout() {
     this.authService.logout();
+    this.router.navigate(['/login']);
+    this.toastr.success('Cierre de session con exito');
   }
 
   Delect($key: string){
     if(confirm('Estas seguro de querer eliminar este producto del inventario?')){
       this.baseService.DeleteProduct($key);
-    this.toastr.success("El producto ha sido eliminado con exito","Operacion Exitosa")
+    this.toastr.success("El producto ha sido eliminado con exito")
     }
   }
 

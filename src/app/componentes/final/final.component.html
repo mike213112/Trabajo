@@ -40,128 +40,105 @@
                         <div class="card-body text-center">
                             <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
                                 <div class="form-group">
-                                <input type="text" class="form-control" 
-                                name="operador" 
-                                #operador="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.operador" 
-                                placeholder="Operador">
-                                <br>
-                                <input type="text" class="form-control" 
-                                name="linea" 
-                                #linea="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.linea" 
-                                placeholder="Linea">
-                                <label class="borde">Seleccion el Horario</label>
-                                <select class="form-control"
-                                name="horario" 
-                                #horario="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.horario" >
+                                    <input type="text" class="form-control" name="operador" #operador="ngModel" [(ngModel)]="baseService.selectedProduct.operador" placeholder="Operador">
+                                    <br>
+                                    <input type="text" class="form-control" name="linea" #linea="ngModel" [(ngModel)]="baseService.selectedProduct.linea" placeholder="Linea">
+                                    <label class="borde">Seleccion el Horario</label>
+                                    <select class="form-control" name="horario" #horario="ngModel" [(ngModel)]="baseService.selectedProduct.horario">
                                 <option class="form-control"
                                 value="am"> Am </option>
                                 <option class="form-control"
                                 value="pm"> Pm </option>
-                                </select> 
-                                <label>Seleccione el Perfil</label>
-                                <select class="form-control"
-                                    name="perfiles" 
-                                    #perfiles="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.perfiles" >
+                                </select>
+                                    <label>Seleccione el Perfil</label>
+                                    <select class="form-control" name="perfiles" #perfiles="ngModel" [(ngModel)]="baseService.selectedProduct.perfiles">
                                     <option class="form-control"
-                                    value="Seleccionar"> Angular x 8 </option>
+                                    value="Angular x 8"> Angular x 8 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 1 5/8 x 10 </option>
+                                    value="Canal 1 5/8 x 10"> Canal 1 5/8 x 10 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 1 5/8 x 12 </option>
+                                    value="Canal 1 5/8 x 12"> Canal 1 5/8 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 2 1/2 x 10</option>
+                                    value="Canal 2 1/2 x 10"> Canal 2 1/2 x 10</option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 2 1/2 x 12 </option>
+                                    value="Canal 2 1/2 x 12"> Canal 2 1/2 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 3 5/8 x 10 </option>
+                                    value="Canal 3 5/8 x 10"> Canal 3 5/8 x 10 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 3 5/8 x 12 </option>
+                                    value="Canal 3 5/8 x 12"> Canal 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canal 3 5/8x 10' cal 22 </option>
+                                    value="Canal 3 5/8x 10' cal 22"> Canal 3 5/8x 10' cal 22 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Canaleta x 12 </option>
+                                    value="Canaleta x 12"> Canaleta x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Omega x 12 </option>
+                                    value="Omega x 12"> Omega x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 1 5/8 x 8 </option>
+                                    value="Poste 1 5/8 x 8"> Poste 1 5/8 x 8 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 1 5/8 x 10 </option>
+                                    value="Poste 1 5/8 x 10"> Poste 1 5/8 x 10 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 1 5/8 x 12 </option>
+                                    value="Poste 1 5/8 x 12"> Poste 1 5/8 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 8 </option>
+                                    value="Poste 2 1/2 x 8"> Poste 2 1/2 x 8 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 2.80 </option>
+                                    value="Poste 2 1/2 x 2.80"> Poste 2 1/2 x 2.80 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 10 </option>
+                                    value="Poste 2 1/2 x 10"> Poste 2 1/2 x 10 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 11 </option>
+                                    value="Poste 2 1/2 x 11"> Poste 2 1/2 x 11 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 12 </option>
+                                    value="Poste 2 1/2 x 12"> Poste 2 1/2 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 16 </option>
+                                    value="Poste 2 1/2 x 16"> Poste 2 1/2 x 16 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 2 1/2 x 10 cal 22 </option>
+                                    value="Poste 2 1/2 x 10 cal 22"> Poste 2 1/2 x 10 cal 22 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 3 5/8 x 8 </option>
+                                    value="Poste 3 5/8 x 8"> Poste 3 5/8 x 8 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 3 5/8 x 8 </option>
+                                    value="Poste 3 5/8 x 8"> Poste 3 5/8 x 8 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 3 5/8 x 12 </option>
+                                    value="Poste 3 5/8 x 12"> Poste 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 3 5/8 x 12 </option>
+                                    value="Poste 3 5/8 x 12"> Poste 3 5/8 x 12 </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> Poste 3 5/8 x 10 cal 22 </option>
-                                </select>   
-                                <br>
-                                <div class="form-group">
-                                    <label class="color">Fecha: </label>
-                                    <input 
-                                    name="fecha" 
-                                    #fecha="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.fecha"
-                                    type="date" id="fecha">
-                                </div>
-                                <label>Seleccione el Codigo</label>
-                                <select class="form-control">
+                                    value="Poste 3 5/8 x 10 cal 22"> Poste 3 5/8 x 10 cal 22 </option>
+                                </select>
+                                    <br>
+                                    <div class="form-group">
+                                        <label class="color">Fecha: </label>
+                                        <input name="fecha" #fecha="ngModel" [(ngModel)]="baseService.selectedProduct.fecha" type="date" id="fecha">
+                                    </div>
+                                    <label>Seleccione el Codigo</label>
+                                    <select class="form-control">
                                     <option *ngFor="let product of ListarProduct">
                                         {{product.codigo1}}
                                     </option>
                                 </select>
-                                <label>Seleccion las medidas</label>
-                                <select class="form-control" 
-                                    name="medidas" 
-                                    #medidas="ngModel" 
-                                    [(ngModel)]="baseService.selectedProduct.medidas" >
+                                    <label>Seleccion las medidas</label>
+                                    <select class="form-control" name="medidas" #medidas="ngModel" [(ngModel)]="baseService.selectedProduct.medidas">
                                     <option class="form-control"
-                                    value="Seleccionar"> 2.44 mts </option>
+                                    value="2.44 mts"> 2.44 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 2.745 mts </option>
+                                    value="2.745 mts"> 2.745 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 2.80 mts </option>
+                                    value="2.80 mts"> 2.80 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 3.05 mts </option>
+                                    value="3.05 mts"> 3.05 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 3.66 mts </option>
+                                    value="3.66 mts"> 3.66 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 2.27 mts </option>
+                                    value="2.27 mts"> 2.27 mts </option>
                                     <option class="form-control"
-                                    value="Seleccionar"> 4.88 mts </option>
+                                    value="4.88 mts"> 4.88 mts </option>
                                 </select>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-block btn-primary" type="submit" >
+                                    <button class="btn btn-block btn-primary" type="submit">
                                         Ingresar
                                     </button>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-block btn-secondary active" 
-                                    type="reset" 
-                                    (click)="resetForm(productForm)"> 
+                                    <button class="btn btn-block btn-secondary active" type="reset" (click)="resetForm(productForm)"> 
                                         Nuevo
                                     </button>
                                 </div>

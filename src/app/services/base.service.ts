@@ -33,9 +33,9 @@ export class BaseService {
 
   ingresarProductoIntermedio(product: Connec){
     this.productList.push({
-      fecha: product.fecha,
+      fecha1: product.fecha1,
       codigo1: product.codigo1,
-      peso: product.peso
+      peso1: product.peso1
     })
   }
 

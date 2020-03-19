@@ -43,35 +43,21 @@
                         <div class="card-body text-center">
                             <form #productForm="ngForm" (ngSubmit)="onSubmit(productForm)">
                                 <div class="form-group">
-                                <label class="color">Fecha: </label>
-                                <input 
-                                name="fecha" 
-                                #fecha="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.fecha"
-                                type="date" id="fecha">
+                                    <label class="color">Fecha: </label>
+                                    <input name="fecha1" #fecha1="ngModel" [(ngModel)]="baseService.selectedProduct.fecha1" type="date" id="fecha1">
                                 </div>
-                                <input type="text" class="form-control" 
-                                name="codigo1" 
-                                #codigo1="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.codigo1" 
-                                placeholder="Codigo">
+                                <input type="text" class="form-control" name="codigo1" #codigo1="ngModel" [(ngModel)]="baseService.selectedProduct.codigo1" placeholder="Codigo">
                                 <br>
                                 <div class="form-group">
-                                <input type="text" class="form-control" 
-                                name="peso" 
-                                #peso="ngModel" 
-                                [(ngModel)]="baseService.selectedProduct.peso" 
-                                placeholder="Peso">
+                                    <input type="text" class="form-control" name="peso1" #peso1="ngModel" [(ngModel)]="baseService.selectedProduct.peso1" placeholder="Peso">
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-block btn-primary" type="submit" >
+                                    <button class="btn btn-block btn-primary" type="submit">
                                         Ingresar
                                     </button>
                                 </div>
                                 <div class="form-group">
-                                    <button class="btn btn-block btn-secondary active" 
-                                    type="reset" 
-                                    (click)="resetForm(productForm)"> 
+                                    <button class="btn btn-block btn-secondary active" type="reset" (click)="resetForm(productForm)"> 
                                         Nuevo
                                     </button>
                                 </div>
