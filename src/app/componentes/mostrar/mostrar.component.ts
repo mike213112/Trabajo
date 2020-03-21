@@ -18,20 +18,23 @@ export class MostrarComponent implements OnInit {
               private router: Router,
               private authService: LoginService) { }
 
+              public isLogged: boolean;
+              public email: string;
+
   ngOnInit(){
-    this.baseService.getProduct();
+    this.baseService.getProductIntermedia();
     this.resetForm();
   }
 
   onSubmit(productForm: NgForm){
-    this.baseService.ingresarProductoIntermedio(productForm.value);
+    this.baseService.IngresarMateriaIntermidia(productForm.value);
     this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(productForm);
   }
 
   onClickLogout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/principal']);
     this.toastr.success('Cierre de session con exito');
   }
 

@@ -11,8 +11,8 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  
   public email: string;
-
   public password: string;
 
   constructor(private router: Router,
@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
     this.autenticar.loginEmail(this.email, this.password)
     .then( (res) => {
       this.toastr.success('Bienvenido');
-      this.router.navigate(['/user/principal']);
+      this.router.navigate(['/principal']);
     }).catch((err) => {
       this.toastr.error('Sus credenciales no son correctas');
       this.router.navigate(['/login']);

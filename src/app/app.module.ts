@@ -18,6 +18,10 @@ import { AngularFireDatabaseModule } from 'angularfire2/database'
 import { environment } from 'src/environments/environment';
 import { BaseService } from './services/base.service'
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AyudaComponent } from './componentes/principal/ayuda/ayuda.component';
+import { NuestrosproductosComponent } from './componentes/principal/nuestrosproductos/nuestrosproductos.component';
+import { ContactoComponent } from './componentes/principal/contacto/contacto.component';
+import { LoginService } from './services/login.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +32,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
     MostrarComponent,
     InventarioComponent,
     ReciboComponent,
-    FinalComponent
+    FinalComponent,
+    AyudaComponent,
+    NuestrosproductosComponent,
+    ContactoComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +48,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
   ],
   providers: [
     BaseService,
+    LoginComponent,
     AngularFireAuth
   ],
   bootstrap: [AppComponent]

@@ -18,20 +18,23 @@ export class IngresarComponent implements OnInit {
               private router: Router,
               private authService: LoginService) { }
 
+              public isLogged: boolean;
+              public email: string;      
+
   ngOnInit(){
-    this.baseService.getProduct();
+    this.baseService.getProductPrincipal();
     this.resetForm();
   }
 
   onSubmit(myform: NgForm){
-    this.baseService.insertarMateriaPrima(myform.value);
+    this.baseService.IngresarMateriaPrima(myform.value);
     this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(myform);
   }
 
   onClickLogout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/principal']);
     this.toastr.success('Cierre de session con exito');
   }
 

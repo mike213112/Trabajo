@@ -7,3 +7,9 @@ h1 {
 .btn-floating {
   color: white;
 }
+.bi-trash {
+  color: red;
+}
+.bi-pencil-square {
+  margin: 10px;
+}

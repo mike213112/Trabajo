@@ -1,26 +1,6 @@
-.container {
-  align-content: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
+body {
+  background-image: url("../../../assets/imagenes/empresa.jpeg");
 }
-.card-body {
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-}
-.login {
-  border: 1px solid #e1e1e1;
-  border-radius: 5px;
-  padding: 17px;
-  width: auto;
-  position: absolute;
-  top: 50%;
-  left: auto 50px;
-}
-@media (max-width: 400px) {
-  .login {
-    width: 90px;
-  }
+.mb-5 {
+  padding-top: 10%;
 }

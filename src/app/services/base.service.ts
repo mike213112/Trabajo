@@ -10,20 +10,30 @@ export class BaseService {
 
   login: any = false;
 
-  productList: AngularFireList<any>;
+  productListMateriaPrima: AngularFireList<any>;
+  productListMateriaIntermidia: AngularFireList<any>;
+  productListMateriaFinal: AngularFireList<any>;
+
   selectedProduct: Connec = new Connec();
 
   constructor(private firebase: AngularFireDatabase) {
 
   }
 
-
-  getProduct(){
-    return this.productList = this.firebase.list('products');
+  getProductPrincipal(){
+    return this.productListMateriaPrima = this.firebase.list('MateriaPrima');
   }
 
-  insertarMateriaPrima(product: Connec){
-    this.productList.push({
+  getProductIntermedia(){
+    return this.productListMateriaIntermidia = this.firebase.list('MateriaIntermedia');
+  }
+
+  getProductFinal(){
+    return this.productListMateriaFinal = this.firebase.list('MateriaFinal');
+  }
+
+  IngresarMateriaPrima(product: Connec){
+    this.productListMateriaPrima.push({
       cliente: product.cliente,
       peso: product.peso,
       codigo: product.codigo,
@@ -31,16 +41,16 @@ export class BaseService {
     });
   }
 
-  ingresarProductoIntermedio(product: Connec){
-    this.productList.push({
+  IngresarMateriaIntermidia(product: Connec){
+    this.productListMateriaIntermidia.push({
       fecha1: product.fecha1,
       codigo1: product.codigo1,
-      peso1: product.peso1
+      peso1: product.peso1,
     })
   }
 
-  ingresarProductoFinal(product: Connec){
-    this.productList.push({
+  IngresarMateriaFinal(product: Connec){
+    this.productListMateriaFinal.push({
       operador: product.operador,
       linea: product.linea,
       fecha: product.fecha,
@@ -50,8 +60,8 @@ export class BaseService {
     })
   }
 
-  UpdateProduct(product: Connec){
-    this.productList.update(product.$key,{
+  UpdateProductPrincipal(product: Connec){
+    this.productListMateriaPrima.update(product.$key,{
       cliente: product.cliente,
       peso: product.peso,
       codigo: product.codigo,
@@ -59,8 +69,34 @@ export class BaseService {
     })
   }
 
-  DeleteProduct($key: string){
-    this.productList.remove($key)
+  UpdateProductIntermedia(product: Connec){
+    this.productListMateriaPrima.update(product.$key,{
+      cliente: product.cliente,
+      peso: product.peso,
+      codigo: product.codigo,
+      envio: product.envio
+    })
+  }
+
+  UpdateProductFinal(product: Connec){
+    this.productListMateriaPrima.update(product.$key,{
+      cliente: product.cliente,
+      peso: product.peso,
+      codigo: product.codigo,
+      envio: product.envio
+    })
+  }
+
+  DeleteProductPrincipal($key: string){
+    this.productListMateriaPrima.remove($key)
+  }
+
+  DeleteProductIntermedia($key: string){
+    this.productListMateriaPrima.remove($key)
+  }
+  
+  DeleteProductFinal($key: string){
+    this.productListMateriaPrima.remove($key)
   }
 
 }

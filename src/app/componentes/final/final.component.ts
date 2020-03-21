@@ -16,21 +16,19 @@ export class FinalComponent implements OnInit {
 
   ListarProduct: Connec[];
 
-
-
   constructor(public baseService: BaseService,
               private toastr: ToastrService,
               private router: Router,
               private authService: LoginService,
               private firebase: AngularFireDatabase) { }
 
+              public isLogged: boolean;
+              public email: string;
 
-
-              
   ngOnInit(){
-    this.baseService.getProduct();
+    this.baseService.getProductFinal();
     this.resetForm();
-    this.baseService.getProduct()  
+    this.baseService.getProductFinal()  
     .snapshotChanges()
     .subscribe(item => {
       this.ListarProduct = [];
@@ -44,12 +42,12 @@ export class FinalComponent implements OnInit {
 
   onClickLogout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/principal']);
     this.toastr.success('Cierre de session con exito');
   }
 
   onSubmit(productForm: NgForm){
-    this.baseService.ingresarProductoFinal(productForm.value);
+    this.baseService.IngresarMateriaFinal(productForm.value);
     
     this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(productForm);

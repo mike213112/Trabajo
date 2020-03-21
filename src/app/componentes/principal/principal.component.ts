@@ -11,16 +11,28 @@ import { ToastrService } from 'ngx-toastr';
 export class PrincipalComponent implements OnInit {
 
   constructor(private router: Router,
-              private authService: LoginService,
+              public authService: LoginService,
               private toastr: ToastrService) { }
 
-  ngOnInit(): void {
+  public isLogged = false;
+  public email: string;
+
+  ngOnInit() {
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogged = true;
+        this.email = auth.email;
+      }else{
+        this.isLogged = false;
+      }
+    })
   }
 
   onClickLogout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/principal']);
     this.toastr.success('Cierre de session con exito');
   }
+
 
 }

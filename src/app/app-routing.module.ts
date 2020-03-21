@@ -7,17 +7,24 @@ import { InventarioComponent } from "./componentes/inventario/inventario.compone
 import { MostrarComponent } from "./componentes/mostrar/mostrar.component";
 import { ReciboComponent } from "./componentes/recibo/recibo.component";
 import { FinalComponent } from './componentes/final/final.component';
+import { NuestrosproductosComponent } from './componentes/principal/nuestrosproductos/nuestrosproductos.component';
+import { ContactoComponent } from './componentes/principal/contacto/contacto.component';
+import { AyudaComponent } from './componentes/principal/ayuda/ayuda.component';
 import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
+  {path: 'principal', component: PrincipalComponent}, 
   {path: 'login', component: LoginComponent},
-  {path: 'user/principal', component: PrincipalComponent, canActivate: [AuthGuard]},
-  {path: 'user/insert', component: IngresarComponent, canActivate: [AuthGuard]},
-  {path: 'user/intermediate', component: MostrarComponent, canActivate: [AuthGuard]},
-  {path: 'user/final', component: FinalComponent, canActivate: [AuthGuard]},
-  {path: 'user/inventory', component: InventarioComponent, canActivate: [AuthGuard]},
-  {path: 'user/receipt', component: ReciboComponent, canActivate: [AuthGuard]},
-  {path: '**', pathMatch: 'full', redirectTo: 'login'}
+  {path: 'principal/user/insert', component: IngresarComponent, canActivate: [AuthGuard]},
+  {path: 'principal/user/intermediate', component: MostrarComponent, canActivate: [AuthGuard]},
+  {path: 'principal/user/final', component: FinalComponent, canActivate: [AuthGuard]},
+  {path: 'principal/user/inventory', component: InventarioComponent, canActivate: [AuthGuard]},
+  {path: 'principal/user/receipt', component: ReciboComponent, canActivate: [AuthGuard]},
+  {path: 'principal/user/receipt', component: ReciboComponent, canActivate: [AuthGuard]},
+  {path: 'principal/nuestros-productos', component: NuestrosproductosComponent},
+  {path: 'principal/Contacto', component: ContactoComponent},
+  {path: 'principal/ayuda', component: AyudaComponent},
+  {path: '**', pathMatch: 'full', redirectTo: 'principal'}
 ];
 
 @NgModule({

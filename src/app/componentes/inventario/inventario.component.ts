@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Quemar } from 'src/app/api/quemar';
 import { BaseService } from '../../services/base.service';
 import { Connec } from '../../models/connec';
 import { element } from 'protractor';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
-import { AngularFireList } from 'angularfire2/database';
 
 @Component({
   selector: 'empresa-inventario',
@@ -15,20 +13,19 @@ import { AngularFireList } from 'angularfire2/database';
 })
 export class InventarioComponent implements OnInit {
 
-  agregarArray: Quemar[] = [
-    { id: 1, peso: 190, codigo: 'hola12', envio: "San Jose Acatempa" },
-    { id: 2, peso: 190, codigo: 'hola12123', envio: "San Jose Pinula" }
-  ]
-
+  public fechajalar: string;
   listarMateriales: Connec[];
-  productList: AngularFireList<any>;
+
   constructor(private baseService: BaseService,
               private toastr: ToastrService,
               private router: Router,
               private authService: LoginService) { }
 
+  public isLogged: boolean;
+  public email: string;
+
   ngOnInit() {
-    this.baseService.getProduct()  
+    this.baseService.getProductIntermedia()  
     .snapshotChanges()
     .subscribe(item => {
       this.listarMateriales = [];
@@ -42,13 +39,13 @@ export class InventarioComponent implements OnInit {
   
   onClickLogout() {
     this.authService.logout();
-    this.router.navigate(['/login']);
+    this.router.navigate(['/principal']);
     this.toastr.success('Cierre de session con exito');
   }
 
   Delect($key: string){
     if(confirm('Estas seguro de querer eliminar este producto del inventario?')){
-      this.baseService.DeleteProduct($key);
+      this.baseService.DeleteProductIntermedia($key);
     this.toastr.success("El producto ha sido eliminado con exito")
     }
   }
