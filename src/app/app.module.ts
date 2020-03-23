@@ -22,6 +22,8 @@ import { AyudaComponent } from './componentes/principal/ayuda/ayuda.component';
 import { NuestrosproductosComponent } from './componentes/principal/nuestrosproductos/nuestrosproductos.component';
 import { ContactoComponent } from './componentes/principal/contacto/contacto.component';
 import { LoginService } from './services/login.service';
+import { RegisterComponent } from './componentes/login/register/register.component';
+import { ModalComponent } from './componentes/modal/modal.component'
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { LoginService } from './services/login.service';
     FinalComponent,
     AyudaComponent,
     NuestrosproductosComponent,
-    ContactoComponent
+    ContactoComponent,
+    RegisterComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,

@@ -11,10 +11,12 @@ import { NuestrosproductosComponent } from './componentes/principal/nuestrosprod
 import { ContactoComponent } from './componentes/principal/contacto/contacto.component';
 import { AyudaComponent } from './componentes/principal/ayuda/ayuda.component';
 import { AuthGuard } from './guards/auth.guard';
+import { RegisterComponent } from './componentes/login/register/register.component';
 
 const routes: Routes = [
   {path: 'principal', component: PrincipalComponent}, 
   {path: 'login', component: LoginComponent},
+  {path: 'register', component: RegisterComponent},
   {path: 'principal/user/insert', component: IngresarComponent, canActivate: [AuthGuard]},
   {path: 'principal/user/intermediate', component: MostrarComponent, canActivate: [AuthGuard]},
   {path: 'principal/user/final', component: FinalComponent, canActivate: [AuthGuard]},
