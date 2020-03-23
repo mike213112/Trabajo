@@ -5,6 +5,7 @@ import { Connec } from 'src/app/models/connec';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/login.service';
+import { element } from 'protractor';
 
 @Component({
   selector: 'empresa-ingresar',
@@ -12,6 +13,8 @@ import { LoginService } from 'src/app/services/login.service';
   styleUrls: ['./ingresar.component.scss']
 })
 export class IngresarComponent implements OnInit {
+
+  listarProveedores: Connec[];
 
   constructor(public baseService: BaseService,
               private toastr: ToastrService,
@@ -21,9 +24,40 @@ export class IngresarComponent implements OnInit {
               public isLogged: boolean;
               public email: string;      
 
+
+              //soloparaadmins@gmail.com
+
+              /*  this.baseService.getProductFinal()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarMateriales = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarMateriales.push(x as Connec)
+      })
+    })*/
   ngOnInit(){
+    this.baseService.getProveedores()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarProveedores = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarProveedores.push(x as Connec)
+      })
+    })
     this.baseService.getProductPrincipal();
     this.resetForm();
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogged = true;
+        this.email = auth.email;
+      }else{
+        this.isLogged = false;
+      }
+    })
   }
 
   onSubmit(myform: NgForm){

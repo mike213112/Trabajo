@@ -14,10 +14,31 @@ export class BaseService {
   productListMateriaIntermidia: AngularFireList<any>;
   productListMateriaFinal: AngularFireList<any>;
 
+  obtenerProveedores: AngularFireList<any>;
+  obtenerHorario: AngularFireList<any>;
+  obtenerPerfil: AngularFireList<any>;
+  obtenerMedidas: AngularFireList<any>;
+
   selectedProduct: Connec = new Connec();
 
   constructor(private firebase: AngularFireDatabase) {
 
+  }
+
+  getProveedores(){
+    return this.obtenerProveedores = this.firebase.list('Proveedores')
+  }
+  
+  getHorario(){
+    return this.obtenerHorario = this.firebase.list('Horario')
+  }
+
+  getPerfiles(){
+    return this.obtenerPerfil = this.firebase.list('Perfiles')
+  }
+
+  getMedidas(){
+    return this.obtenerMedidas = this.firebase.list('Medidas')
   }
 
   getProductPrincipal(){
@@ -30,6 +51,30 @@ export class BaseService {
 
   getProductFinal(){
     return this.productListMateriaFinal = this.firebase.list('MateriaFinal');
+  }
+
+  Proveedores(product: Connec){
+    this.obtenerProveedores.push({
+      proveedor: product.proveedor
+    })
+  }
+
+  Horario(product: Connec){
+    this.obtenerHorario.push({
+      horario: product.horario
+    })
+  }
+
+  Perfiles(product: Connec){
+    this.obtenerPerfil.push({
+      perfiles: product.perfiles
+    })
+  }
+
+  Medidas(product: Connec){
+    this.obtenerMedidas.push({
+      medidas: product.medidas
+    })
   }
 
   IngresarMateriaPrima(product: Connec){
@@ -55,6 +100,7 @@ export class BaseService {
       linea: product.linea,
       fecha: product.fecha,
       horario: product.horario,
+      codigo2: product.codigo2,
       perfiles: product.perfiles,
       medidas: product.medidas
     })

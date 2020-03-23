@@ -15,6 +15,9 @@ import { AngularFireDatabase, AngularFireList } from 'angularfire2/database';
 export class FinalComponent implements OnInit {
 
   ListarProduct: Connec[];
+  listarPerfiles: Connec[];
+  listarMedidas: Connec[];
+  listarHorario: Connec[];
 
   constructor(public baseService: BaseService,
               private toastr: ToastrService,
@@ -28,7 +31,7 @@ export class FinalComponent implements OnInit {
   ngOnInit(){
     this.baseService.getProductFinal();
     this.resetForm();
-    this.baseService.getProductFinal()  
+    this.baseService.getProductIntermedia()  
     .snapshotChanges()
     .subscribe(item => {
       this.ListarProduct = [];
@@ -37,6 +40,44 @@ export class FinalComponent implements OnInit {
         x["$key"] = element.key;
         this.ListarProduct.push(x as Connec)
       })
+    })
+    this.baseService.getHorario()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarHorario = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarHorario.push(x as Connec)
+      })
+    })
+    this.baseService.getPerfiles()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarPerfiles = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarPerfiles.push(x as Connec)
+      })
+    })
+    this.baseService.getMedidas()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarMedidas = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarMedidas.push(x as Connec)
+      })
+    })
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogged = true;
+        this.email = auth.email;
+      }else{
+        this.isLogged = false;
+      }
     })
   }
 
@@ -48,7 +89,6 @@ export class FinalComponent implements OnInit {
 
   onSubmit(productForm: NgForm){
     this.baseService.IngresarMateriaFinal(productForm.value);
-    
     this.toastr.success('Se agrego un nuevo producto')
     this.resetForm(productForm);
   }

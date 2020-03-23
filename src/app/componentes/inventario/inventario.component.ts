@@ -14,7 +14,8 @@ import { LoginService } from 'src/app/services/login.service';
 export class InventarioComponent implements OnInit {
 
   public fechajalar: string;
-  listarMateriales: Connec[];
+  listarMaterialesIntermedios: Connec[];
+  listarMaterialesFinales: Connec[];
 
   constructor(private baseService: BaseService,
               private toastr: ToastrService,
@@ -28,12 +29,30 @@ export class InventarioComponent implements OnInit {
     this.baseService.getProductIntermedia()  
     .snapshotChanges()
     .subscribe(item => {
-      this.listarMateriales = [];
+      this.listarMaterialesIntermedios = [];
       item.forEach(element => {
         let x = element.payload.toJSON();
         x["$key"] = element.key;
-        this.listarMateriales.push(x as Connec)
+        this.listarMaterialesIntermedios.push(x as Connec)
       })
+    })
+    this.baseService.getProductFinal()  
+    .snapshotChanges()
+    .subscribe(item => {
+      this.listarMaterialesFinales = [];
+      item.forEach(element => {
+        let x = element.payload.toJSON();
+        x["$key"] = element.key;
+        this.listarMaterialesFinales.push(x as Connec)
+      })
+    })
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogged = true;
+        this.email = auth.email;
+      }else{
+        this.isLogged = false;
+      }
     })
   }
   

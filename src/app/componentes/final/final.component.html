@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/user/principal">Principal</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand" href="/principal">Principal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,20 +16,17 @@
                 <a class="nav-link" [routerLink]="['/principal/ayuda']" routerLinkActive="active"> Ayuda </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/insert']" routerLinkActive="active">Ingreso de Materia Prima </a>
+                <a class="nav-link" [routerLink]="['/principal/user/insert']" routerLinkActive="active">Ingreso de Materia Prima </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/intermediate']" routerLinkActive="active"> Producto intermedio </a>
+                <a class="nav-link" [routerLink]="['/principal/user/intermediate']" routerLinkActive="active"> Producto intermedio </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/final']" routerLinkActive="active"> Final </a>
+                <a class="nav-link" [routerLink]="['/principal/user/final']" routerLinkActive="active"> Final </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/inventory']" routerLinkActive="active"> Inventario</a>
+                <a class="nav-link" [routerLink]="['/principal/user/inventory']" routerLinkActive="active"> Inventario</a>
             </li>
-            <!--<li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/user/receipt']" routerLinkActive="active">  Despacho</a>
-            </li>-->
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
         <ul class="navbar-nav ml-auto">
@@ -55,93 +52,41 @@
                                     <input type="text" class="form-control" name="operador" #operador="ngModel" [(ngModel)]="baseService.selectedProduct.operador" placeholder="Operador">
                                     <br>
                                     <input type="text" class="form-control" name="linea" #linea="ngModel" [(ngModel)]="baseService.selectedProduct.linea" placeholder="Linea">
-                                    <label class="borde">Seleccion el Horario</label>
+                                    <br>
                                     <select class="form-control" name="horario" #horario="ngModel" [(ngModel)]="baseService.selectedProduct.horario">
                                 <option class="form-control"
-                                value="am"> Am </option>
-                                <option class="form-control"
-                                value="pm"> Pm </option>
+                                value="Seleccione"> Seleccione el horario </option>
+                                <option *ngFor="let llamarhorario of listarHorario">
+                                    {{llamarhorario.horario}}
+                                </option>
                                 </select>
-                                    <label>Seleccione el Perfil</label>
+                                    <br>
                                     <select class="form-control" name="perfiles" #perfiles="ngModel" [(ngModel)]="baseService.selectedProduct.perfiles">
-                                    <option class="form-control"
-                                    value="Angular x 8"> Angular x 8 </option>
-                                    <option class="form-control"
-                                    value="Canal 1 5/8 x 10"> Canal 1 5/8 x 10 </option>
-                                    <option class="form-control"
-                                    value="Canal 1 5/8 x 12"> Canal 1 5/8 x 12 </option>
-                                    <option class="form-control"
-                                    value="Canal 2 1/2 x 10"> Canal 2 1/2 x 10</option>
-                                    <option class="form-control"
-                                    value="Canal 2 1/2 x 12"> Canal 2 1/2 x 12 </option>
-                                    <option class="form-control"
-                                    value="Canal 3 5/8 x 10"> Canal 3 5/8 x 10 </option>
-                                    <option class="form-control"
-                                    value="Canal 3 5/8 x 12"> Canal 3 5/8 x 12 </option>
-                                    <option class="form-control"
-                                    value="Canal 3 5/8x 10' cal 22"> Canal 3 5/8x 10' cal 22 </option>
-                                    <option class="form-control"
-                                    value="Canaleta x 12"> Canaleta x 12 </option>
-                                    <option class="form-control"
-                                    value="Omega x 12"> Omega x 12 </option>
-                                    <option class="form-control"
-                                    value="Poste 1 5/8 x 8"> Poste 1 5/8 x 8 </option>
-                                    <option class="form-control"
-                                    value="Poste 1 5/8 x 10"> Poste 1 5/8 x 10 </option>
-                                    <option class="form-control"
-                                    value="Poste 1 5/8 x 12"> Poste 1 5/8 x 12 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 8"> Poste 2 1/2 x 8 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 2.80"> Poste 2 1/2 x 2.80 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 10"> Poste 2 1/2 x 10 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 11"> Poste 2 1/2 x 11 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 12"> Poste 2 1/2 x 12 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 16"> Poste 2 1/2 x 16 </option>
-                                    <option class="form-control"
-                                    value="Poste 2 1/2 x 10 cal 22"> Poste 2 1/2 x 10 cal 22 </option>
-                                    <option class="form-control"
-                                    value="Poste 3 5/8 x 8"> Poste 3 5/8 x 8 </option>
-                                    <option class="form-control"
-                                    value="Poste 3 5/8 x 8"> Poste 3 5/8 x 8 </option>
-                                    <option class="form-control"
-                                    value="Poste 3 5/8 x 12"> Poste 3 5/8 x 12 </option>
-                                    <option class="form-control"
-                                    value="Poste 3 5/8 x 12"> Poste 3 5/8 x 12 </option>
-                                    <option class="form-control"
-                                    value="Poste 3 5/8 x 10 cal 22"> Poste 3 5/8 x 10 cal 22 </option>
+                                    <option class="form-control"> 
+                                        Seleccione el Perfil 
+                                    </option>
+                                    <option *ngFor="let llamarperfiles of listarPerfiles"> 
+                                        {{llamarperfiles.perfiles}}
+                                    </option>
                                 </select>
                                     <br>
                                     <div class="form-group">
                                         <label class="color">Fecha: </label>
                                         <input name="fecha" #fecha="ngModel" [(ngModel)]="baseService.selectedProduct.fecha" type="date" id="fecha">
                                     </div>
-                                    <label>Seleccione el Codigo</label>
-                                    <select class="form-control">
+                                    <select class="form-control" name="codigo2" #codigo2="ngModel" [(ngModel)]="baseService.selectedProduct.codigo2">
+                                    <option value="Seleccionar">Seleccionar el codigo</option>
                                     <option *ngFor="let product of ListarProduct">
                                         {{product.codigo1}}
                                     </option>
-                                </select>
-                                    <label>Seleccion las medidas</label>
+                                    </select>
+                                    <br>
                                     <select class="form-control" name="medidas" #medidas="ngModel" [(ngModel)]="baseService.selectedProduct.medidas">
                                     <option class="form-control"
-                                    value="2.44 mts"> 2.44 mts </option>
-                                    <option class="form-control"
-                                    value="2.745 mts"> 2.745 mts </option>
-                                    <option class="form-control"
-                                    value="2.80 mts"> 2.80 mts </option>
-                                    <option class="form-control"
-                                    value="3.05 mts"> 3.05 mts </option>
-                                    <option class="form-control"
-                                    value="3.66 mts"> 3.66 mts </option>
-                                    <option class="form-control"
-                                    value="2.27 mts"> 2.27 mts </option>
-                                    <option class="form-control"
-                                    value="4.88 mts"> 4.88 mts </option>
+                                    value="Seleccione"> Seleccione las medidas </option>
+                                    <option *ngFor="let llamarmedidas of listarMedidas"> 
+                                        {{llamarmedidas.medidas}}
+                                    </option>
                                 </select>
                                 </div>
                                 <div class="form-group">

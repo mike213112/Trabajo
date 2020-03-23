@@ -5,11 +5,13 @@ export class Connec {
     horario: string;
     trabajador: string;
     cliente: string;
+    proveedor: string;
     peso: string;
     peso1: string;
     medidas: string;
     codigo: string;
     codigo1: string;
+    codigo2: string;
     envio: string;
     tiras: string;
     perfiles: string;

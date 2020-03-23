@@ -48,7 +48,7 @@ import { LoginService } from './services/login.service';
   ],
   providers: [
     BaseService,
-    LoginComponent,
+    LoginService,
     AngularFireAuth
   ],
   bootstrap: [AppComponent]

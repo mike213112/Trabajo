@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/user/principal">Principal</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+    <a class="navbar-brand" href="/principal">Principal</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -16,20 +16,17 @@
                 <a class="nav-link" [routerLink]="['/principal/ayuda']" routerLinkActive="active"> Ayuda </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/insert']" routerLinkActive="active">Ingreso de Materia Prima </a>
+                <a class="nav-link" [routerLink]="['/principal/user/insert']" routerLinkActive="active">Ingreso de Materia Prima </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/intermediate']" routerLinkActive="active"> Producto intermedio </a>
+                <a class="nav-link" [routerLink]="['/principal/user/intermediate']" routerLinkActive="active"> Producto intermedio </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/final']" routerLinkActive="active"> Final </a>
+                <a class="nav-link" [routerLink]="['/principal/user/final']" routerLinkActive="active"> Final </a>
             </li>
             <li class="nav-item" *ngIf="isLogged">
-                <a class="nav-link" [routerLink]="['/user/inventory']" routerLinkActive="active"> Inventario</a>
+                <a class="nav-link" [routerLink]="['/principal/user/inventory']" routerLinkActive="active"> Inventario</a>
             </li>
-            <!--<li class="nav-item ">
-                <a class="nav-link" [routerLink]="['/user/receipt']" routerLinkActive="active">  Despacho</a>
-            </li>-->
         </ul>
         <a class="navbar-brand hidden-md-down"></a>
         <ul class="navbar-nav ml-auto">
@@ -42,7 +39,6 @@
         </ul>
     </div>
 </nav>
-<br>
 <section id="insert" class="mb-5 mt-5">
     <div class="container">
         <div class="row">
@@ -52,17 +48,13 @@
                         <h1>Ingreso de Materia Prima</h1>
                         <div class="card-body text-center">
                             <form #myform="ngForm" (ngSubmit)="onSubmit(myform)">
-                                <div class="form-group">
-                                    <label class="color">Seleccione el Proveedor</label>
-                                    <select class="form-control" name="cliente" #cliente="ngModel" [(ngModel)]="baseService.selectedProduct.cliente">
-                                    <option class="form-control" value="Termium"> 
-                                    Termium 
+                                <div class="form-label-group" class="form-group">
+                                    <select class="form-control" name="cliente" #cliente="ngModel" [(ngModel)]="baseService.selectedProduct.cliente" value="seleccione">
+                                    <option class="placeholder" value="Seleccione"> 
+                                    Seleccione un proveedor 
                                     </option>
-                                    <option class="form-control" value="Bobina1"> 
-                                        Bobina1 
-                                    </option>
-                                    <option class="form-control" value="Bobina2"> 
-                                    Bobina2 
+                                    <option *ngFor="let provee of listarProveedores"> 
+                                         {{provee.proveedor}}
                                     </option>
                                 </select>
                                     <br>

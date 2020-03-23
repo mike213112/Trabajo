@@ -24,6 +24,14 @@ export class MostrarComponent implements OnInit {
   ngOnInit(){
     this.baseService.getProductIntermedia();
     this.resetForm();
+    this.authService.getAuth().subscribe(auth => {
+      if(auth){
+        this.isLogged = true;
+        this.email = auth.email;
+      }else{
+        this.isLogged = false;
+      }
+    })
   }
 
   onSubmit(productForm: NgForm){
