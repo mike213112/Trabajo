@@ -64,8 +64,8 @@
                         <td>
                             <input placeholder="Cantidad">
                         </td>
-                        <td *ngFor="let listarfinal of listarMaterialesFinales">
-                            {{listarfinal.perfiles}}
+                        <td *ngFor="let listar of listarMaterialesFinales">
+                            {{listar.perfiles}}
                         </td>
                         <td *ngFor="let listar of listarMaterialesIntermedios">
                             {{listar.peso1}}
@@ -74,8 +74,11 @@
                             <input placeholder="Cantidad">
                         </td>
                         <td>
-                            <a class="btn btn-block btn-secondary active">
-                                Edit
+                            <!--<a class="btn btn-secondary text-white" (click)="onEdit(product)">
+                                <i class="far fa-edit"></i>
+                            </a>-->
+                            <a class="btn btn-danger text-white" (click)="Delect(listar.$key)">
+                                <i class="fas fa-trash-alt"></i>
                             </a>
                         </td>
                     </tr>

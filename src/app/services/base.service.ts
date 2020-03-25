@@ -138,11 +138,11 @@ export class BaseService {
   }
 
   DeleteProductIntermedia($key: string){
-    this.productListMateriaPrima.remove($key)
+    this.productListMateriaIntermidia.remove($key)
   }
   
   DeleteProductFinal($key: string){
-    this.productListMateriaPrima.remove($key)
+    this.productListMateriaFinal.remove($key)
   }
 
 }

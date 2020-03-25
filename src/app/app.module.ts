@@ -23,8 +23,6 @@ import { NuestrosproductosComponent } from './componentes/principal/nuestrosprod
 import { ContactoComponent } from './componentes/principal/contacto/contacto.component';
 import { LoginService } from './services/login.service';
 import { RegisterComponent } from './componentes/login/register/register.component';
-import { ModalComponent } from './componentes/modal/modal.component'
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,8 +36,7 @@ import { ModalComponent } from './componentes/modal/modal.component'
     AyudaComponent,
     NuestrosproductosComponent,
     ContactoComponent,
-    RegisterComponent,
-    ModalComponent
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
